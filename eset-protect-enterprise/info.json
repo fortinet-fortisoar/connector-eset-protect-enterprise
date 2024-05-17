@@ -1,0 +1,138 @@
+{
+  "name": "eset-protect-enterprise",
+  "label": "ESET Protect Enterprise",
+  "version": "1.0.0",
+  "description": "ESET Protect Enterprise extended detection and response (XDR) that delivers enterprise-grade visibility, threat hunting and response options.",
+  "publisher": "FortiSOAR",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "",
+  "icon_small_name": "eset_small.png",
+  "icon_large_name": "eset_large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "base_url",
+        "description": "URL for the ESET Enterprise server from where the connector gets notifications."
+      },
+      {
+        "title": "Username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "username",
+        "name": "server_username",
+        "description": "Username to access the ESET Enterprise server."
+      },
+      {
+        "title": "Password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "server_password",
+        "description": "Password to access the ESET Enterprise server."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "list_endpoints",
+      "title": "List Endpoints",
+      "description": "List all endpoints from ESET Enterprise Server.",
+      "category": "investigation",
+      "annotation": "list_endpoints",
+      "parameters": [],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "list_events",
+      "title": "List Events",
+      "description": "List all events from ESET Enterprise Server.",
+      "category": "investigation",
+      "annotation": "list_events",
+      "parameters": [],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "list_incidents",
+      "title": "List Incidents",
+      "description": "List all Incidents from ESET Enterprise Server.",
+      "category": "investigation",
+      "annotation": "list_incidents",
+      "parameters": [],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "list_files",
+      "title": "List Files",
+      "description": "List all files from ESET Enterprise Server.",
+      "category": "investigation",
+      "annotation": "list_files",
+      "parameters": [],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "isolate_endpoint",
+      "title": "Isolate Endpoint",
+      "description": "Isolate the provided endpoint.",
+      "category": "investigation",
+      "annotation": "isolate_endpoint",
+      "parameters": [
+        {
+          "title": "Endpoint ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "endpoint_id",
+          "description": "Specify the Endpoint ID to submit to isolate endpoint from network.",
+          "tooltip": "Specify the Endpoint ID to submit to isolate endpoint from network."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "rejoin_endpoint",
+      "title": "Rejoin Endpoint",
+      "description": "Rejoin the provided endpoint.",
+      "category": "investigation",
+      "annotation": "rejoin_endpoint",
+      "parameters": [
+        {
+          "title": "Endpoint ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "endpoint_id",
+          "description": "Specify the Endpoint ID to submit to rejoin endpoint from network.",
+          "tooltip": "Specify the Endpoint ID to submit to rejoin endpoint from network."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    }
+  ]
+}

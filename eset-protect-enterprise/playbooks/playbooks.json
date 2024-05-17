@@ -1,0 +1,502 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "8ed288c7-d14d-4979-9781-88f36ea17573",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "e34d78cd-3bfb-4f30-b743-2ffc329ec3ee",
+          "collection": "/api/3/workflow_collections/8ed288c7-d14d-4979-9781-88f36ea17573",
+          "steps": [
+            {
+              "uuid": "2badaa24-7ddd-4281-ae63-c07df4b86db9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "d5f3f18a-9bfc-4bc8-a553-742466d41abc",
+                "title": "ESET Protect Enterprise: List Endpoints",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "69b418c1-e6cf-4126-971b-559a942f32a0",
+              "@type": "WorkflowStep",
+              "name": "List Endpoints",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ESET Protect Enterprise",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "eset-protect-enterprise",
+                "operation": "list_endpoints",
+                "operationTitle": "List Endpoints",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "List all endpoints from ESET Enterprise Server.",
+          "name": "List Endpoints",
+          "tag": "#ESET Protect Enterprise",
+          "recordTags": [
+            "Eset",
+            "eset-protect-enterprise"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2badaa24-7ddd-4281-ae63-c07df4b86db9",
+          "routes": [
+            {
+              "uuid": "77ece04e-2594-490b-9c12-504f34e0fca3",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> List Endpoints",
+              "sourceStep": "/api/3/workflow_steps/2badaa24-7ddd-4281-ae63-c07df4b86db9",
+              "targetStep": "/api/3/workflow_steps/69b418c1-e6cf-4126-971b-559a942f32a0"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "46782335-1a70-4281-97d2-ecce6aa30cba",
+          "collection": "/api/3/workflow_collections/8ed288c7-d14d-4979-9781-88f36ea17573",
+          "steps": [
+            {
+              "uuid": "77e2d3f4-e3b2-4b0a-b022-e1c2d2ae4ba7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e1d0fd13-470b-440d-a12a-4e507956838f",
+                "title": "ESET Protect Enterprise: List Events",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "23f38f77-adc1-4eb1-a025-a6d64d6e3784",
+              "@type": "WorkflowStep",
+              "name": "List Events",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ESET Protect Enterprise",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "eset-protect-enterprise",
+                "operation": "list_events",
+                "operationTitle": "List Events",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "List all events from ESET Enterprise Server.",
+          "name": "List Events",
+          "tag": "#ESET Protect Enterprise",
+          "recordTags": [
+            "Eset",
+            "eset-protect-enterprise"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/77e2d3f4-e3b2-4b0a-b022-e1c2d2ae4ba7",
+          "routes": [
+            {
+              "uuid": "f795e92c-ca79-4f91-ae8d-3501a47c7295",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> List Events",
+              "sourceStep": "/api/3/workflow_steps/77e2d3f4-e3b2-4b0a-b022-e1c2d2ae4ba7",
+              "targetStep": "/api/3/workflow_steps/23f38f77-adc1-4eb1-a025-a6d64d6e3784"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3161524a-af3d-4973-a2ab-856f90c41002",
+          "collection": "/api/3/workflow_collections/8ed288c7-d14d-4979-9781-88f36ea17573",
+          "steps": [
+            {
+              "uuid": "b0a8075a-8376-40ab-95a8-78d1b28edb04",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "65c2b5d6-6eb1-4b1b-9de7-57ca74f8b6fc",
+                "title": "ESET Protect Enterprise: List Incidents",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "f80c2d16-a7b4-4079-9738-2f63e0772327",
+              "@type": "WorkflowStep",
+              "name": "List Incidents",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ESET Protect Enterprise",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "eset-protect-enterprise",
+                "operation": "list_incidents",
+                "operationTitle": "List Incidents",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "List all Incidents from ESET Enterprise Server.",
+          "name": "List Incidents",
+          "tag": "#ESET Protect Enterprise",
+          "recordTags": [
+            "Eset",
+            "eset-protect-enterprise"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b0a8075a-8376-40ab-95a8-78d1b28edb04",
+          "routes": [
+            {
+              "uuid": "1d1fbe06-fb75-4f8c-ad14-21654e653669",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> List Incidents",
+              "sourceStep": "/api/3/workflow_steps/b0a8075a-8376-40ab-95a8-78d1b28edb04",
+              "targetStep": "/api/3/workflow_steps/f80c2d16-a7b4-4079-9738-2f63e0772327"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "653f9d1a-ae85-47f0-8388-9c08168b180d",
+          "collection": "/api/3/workflow_collections/8ed288c7-d14d-4979-9781-88f36ea17573",
+          "steps": [
+            {
+              "uuid": "3aeb7ec0-0624-4d3e-8ba2-fe05ae802a1f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "77f84407-25e0-49b2-8ec8-ebc191be1c1f",
+                "title": "ESET Protect Enterprise: List Files",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9e0d07d4-cc75-401d-ba33-da81a7159854",
+              "@type": "WorkflowStep",
+              "name": "List Files",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ESET Protect Enterprise",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "eset-protect-enterprise",
+                "operation": "list_files",
+                "operationTitle": "List Files",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "List all files from ESET Enterprise Server.",
+          "name": "List Files",
+          "tag": "#ESET Protect Enterprise",
+          "recordTags": [
+            "Eset",
+            "eset-protect-enterprise"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3aeb7ec0-0624-4d3e-8ba2-fe05ae802a1f",
+          "routes": [
+            {
+              "uuid": "1cf75060-a0e2-4848-bf07-4989f0092fd9",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> List Files",
+              "sourceStep": "/api/3/workflow_steps/3aeb7ec0-0624-4d3e-8ba2-fe05ae802a1f",
+              "targetStep": "/api/3/workflow_steps/9e0d07d4-cc75-401d-ba33-da81a7159854"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "249e3387-9d50-4d5d-aa7d-0ab388472088",
+          "collection": "/api/3/workflow_collections/8ed288c7-d14d-4979-9781-88f36ea17573",
+          "steps": [
+            {
+              "uuid": "1f998b4c-c183-40c3-beea-5f778b4bbc97",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e62b088a-0af0-416a-bda2-08625e915324",
+                "title": "ESET Protect Enterprise: Isolate Endpoint",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "26e429b0-d89d-42a7-b465-809b295183b2",
+              "@type": "WorkflowStep",
+              "name": "Isolate Endpoint",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ESET Protect Enterprise",
+                "config": "''",
+                "params": {
+                  "endpoint_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "eset-protect-enterprise",
+                "operation": "isolate_endpoint",
+                "operationTitle": "Isolate Endpoint",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Isolate the provided endpoint.",
+          "name": "Isolate Endpoint",
+          "tag": "#ESET Protect Enterprise",
+          "recordTags": [
+            "Eset",
+            "eset-protect-enterprise"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1f998b4c-c183-40c3-beea-5f778b4bbc97",
+          "routes": [
+            {
+              "uuid": "c5cfa919-23c7-4240-986e-57916de19522",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Isolate Endpoint",
+              "sourceStep": "/api/3/workflow_steps/1f998b4c-c183-40c3-beea-5f778b4bbc97",
+              "targetStep": "/api/3/workflow_steps/26e429b0-d89d-42a7-b465-809b295183b2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "559315e0-a121-4b9e-8de3-ebe1235fc05a",
+          "collection": "/api/3/workflow_collections/8ed288c7-d14d-4979-9781-88f36ea17573",
+          "steps": [
+            {
+              "uuid": "dd4cfb9d-a6de-4334-ad84-1033a1ef16c9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "fbd1d9e1-19c5-4a94-b473-0fd4170e8edc",
+                "title": "ESET Protect Enterprise: Rejoin Endpoint",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4a7a2a5a-daeb-4026-be51-1cc087935dcc",
+              "@type": "WorkflowStep",
+              "name": "Rejoin Endpoint",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ESET Protect Enterprise",
+                "config": "''",
+                "params": {
+                  "endpoint_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "eset-protect-enterprise",
+                "operation": "rejoin_endpoint",
+                "operationTitle": "Rejoin Endpoint",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Rejoin the provided endpoint.",
+          "name": "Rejoin Endpoint",
+          "tag": "#ESET Protect Enterprise",
+          "recordTags": [
+            "Eset",
+            "eset-protect-enterprise"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/dd4cfb9d-a6de-4334-ad84-1033a1ef16c9",
+          "routes": [
+            {
+              "uuid": "4a38ebbf-273c-4e92-974d-80bf79aac953",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Rejoin Endpoint",
+              "sourceStep": "/api/3/workflow_steps/dd4cfb9d-a6de-4334-ad84-1033a1ef16c9",
+              "targetStep": "/api/3/workflow_steps/4a7a2a5a-daeb-4026-be51-1cc087935dcc"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - ESET Protect Enterprise - 1.0.0",
+      "description": "ESET Protect Enterprise extended detection and response (XDR) that delivers enterprise-grade visibility, threat hunting and response options.",
+      "visible": true,
+      "recordTags": [
+        "Eset",
+        "eset-protect-enterprise"
+      ]
+    }
+  ]
+}
