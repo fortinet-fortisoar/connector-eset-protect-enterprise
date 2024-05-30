@@ -53,82 +53,105 @@
   },
   "operations": [
     {
-      "operation": "list_endpoints",
-      "title": "List Endpoints",
-      "description": "List all endpoints from ESET Enterprise Server.",
+      "operation": "get_executables",
+      "title": "Get Executables",
+      "description": "List all the executables.",
       "category": "investigation",
-      "annotation": "list_endpoints",
-      "parameters": [],
-      "enabled": true,
-      "output_schema": {}
-    },
-    {
-      "operation": "list_events",
-      "title": "List Events",
-      "description": "List all events from ESET Enterprise Server.",
-      "category": "investigation",
-      "annotation": "list_events",
-      "parameters": [],
-      "enabled": true,
-      "output_schema": {}
-    },
-    {
-      "operation": "list_incidents",
-      "title": "List Incidents",
-      "description": "List all Incidents from ESET Enterprise Server.",
-      "category": "investigation",
-      "annotation": "list_incidents",
-      "parameters": [],
-      "enabled": true,
-      "output_schema": {}
-    },
-    {
-      "operation": "list_files",
-      "title": "List Files",
-      "description": "List all files from ESET Enterprise Server.",
-      "category": "investigation",
-      "annotation": "list_files",
-      "parameters": [],
-      "enabled": true,
-      "output_schema": {}
-    },
-    {
-      "operation": "isolate_endpoint",
-      "title": "Isolate Endpoint",
-      "description": "Isolate the provided endpoint.",
-      "category": "investigation",
-      "annotation": "isolate_endpoint",
+      "annotation": "get_executables",
       "parameters": [
         {
-          "title": "Endpoint ID",
-          "required": true,
+          "title": "Executable UUID",
+          "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
-          "name": "endpoint_id",
-          "description": "Specify the Endpoint ID to submit to isolate endpoint from network.",
-          "tooltip": "Specify the Endpoint ID to submit to isolate endpoint from network."
+          "name": "executableUuid",
+          "description": "Specify the Executable UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Executable UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
         }
       ],
       "enabled": true,
       "output_schema": {}
     },
     {
-      "operation": "rejoin_endpoint",
-      "title": "Rejoin Endpoint",
-      "description": "Rejoin the provided endpoint.",
+      "operation": "block_executables",
+      "title": "Block Executables",
+      "description": "Block executables by provided UUID",
       "category": "investigation",
-      "annotation": "rejoin_endpoint",
+      "annotation": "block_executables",
       "parameters": [
         {
-          "title": "Endpoint ID",
-          "required": true,
+          "title": "Executable UUID",
+          "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
-          "name": "endpoint_id",
-          "description": "Specify the Endpoint ID to submit to rejoin endpoint from network.",
-          "tooltip": "Specify the Endpoint ID to submit to rejoin endpoint from network."
+          "name": "executableUuid",
+          "description": "Specify the Executable UUID to the blocked.",
+          "tooltip": "Specify the Executable UUID to the blocked."
+        },
+        {
+          "title": "Request Body",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "json_data",
+          "description": "Request body.",
+          "tooltip": "Request body.",
+          "value": {}
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "unblock_executables",
+      "title": "Unblock Executables",
+      "description": "Unblock executables by provided UUID",
+      "category": "investigation",
+      "annotation": "unblock_executables",
+      "parameters": [
+        {
+          "title": "Executable UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "executableUuid",
+          "description": "Specify the Executable UUID to the unblocked.",
+          "tooltip": "Specify the Executable UUID to the unblocked."
+        },
+        {
+          "title": "Request Body",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "json_data",
+          "description": "Request body.",
+          "tooltip": "Request body.",
+          "value": {}
         }
       ],
       "enabled": true,
