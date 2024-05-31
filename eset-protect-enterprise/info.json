@@ -60,6 +60,17 @@
       "annotation": "get_executables",
       "parameters": [
         {
+          "title": "Application Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Application Management.",
+          "tooltip": "Specify the server URL for Application Management.",
+          "value": "https://eu.application-management.eset.systems"
+        },
+        {
           "title": "Executable UUID",
           "required": false,
           "editable": true,
@@ -94,12 +105,272 @@
       "output_schema": {}
     },
     {
+      "operation": "get_detections",
+      "title": "Get Detections",
+      "description": "List all the detections.",
+      "category": "investigation",
+      "annotation": "get_detections",
+      "parameters": [
+        {
+          "title": "Incident Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Incident Management.",
+          "tooltip": "Specify the server URL for Incident Management.",
+          "value": "https://eu.incident-management.eset.systems"
+        },
+        {
+          "title": "Detection UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "detectionUuid",
+          "description": "Specify the Detection UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Detection UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Device UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "deviceUuid",
+          "description": "Specify the Device UUID to get detections those are linked with the provided device.",
+          "tooltip": "Specify the Device UUID to get detections those are linked with the provided device."
+        },
+        {
+          "title": "Start Time",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "start_time",
+          "description": "Specify the start time for include only incidents whose detections occurred after start time.",
+          "tooltip": "Specify the start time for include only incidents whose detections occurred after start time."
+        },
+        {
+          "title": "End Time",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "end_time",
+          "description": "Specify the end time for include only incidents whose detections occurred before end time.",
+          "tooltip": "Specify the end time for include only incidents whose detections occurred before end time."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "get_detection_groups",
+      "title": "Get Detection Groups",
+      "description": "List all the detections groups.",
+      "category": "investigation",
+      "annotation": "get_detection_groups",
+      "parameters": [
+        {
+          "title": "Incident Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Incident Management.",
+          "tooltip": "Specify the server URL for Incident Management.",
+          "value": "https://eu.incident-management.eset.systems"
+        },
+        {
+          "title": "Detection Group UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "detectionGroupUuid",
+          "description": "Specify the Detection Group UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Detection Group UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Device UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "deviceUuid",
+          "description": "Specify the Device UUID to get detection groups those are linked with the provided device.",
+          "tooltip": "Specify the Device UUID to get detection groups those are linked with the provided device."
+        },
+        {
+          "title": "Start Time",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "start_time",
+          "description": "Specify the start time for include only incidents whose detections occurred after start time.",
+          "tooltip": "Specify the start time for include only incidents whose detections occurred after start time."
+        },
+        {
+          "title": "End Time",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "end_time",
+          "description": "Specify the end time for include only incidents whose detections occurred before end time.",
+          "tooltip": "Specify the end time for include only incidents whose detections occurred before end time."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "get_device",
+      "title": "Get Device",
+      "description": "Get device details.",
+      "category": "investigation",
+      "annotation": "get_device",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Device Management.",
+          "tooltip": "Specify the server URL for Device Management.",
+          "value": "https://eu.device-management.eset.systems"
+        },
+        {
+          "title": "Device UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "deviceUuid",
+          "description": "Specify the Device UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Device UUID to get the details from ESET Server."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "get_device_groups",
+      "title": "Get Device Groups",
+      "description": "Get list of all device group details.",
+      "category": "investigation",
+      "annotation": "get_device_groups",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Device Management.",
+          "tooltip": "Specify the server URL for Device Management.",
+          "value": "https://eu.device-management.eset.systems"
+        },
+        {
+          "title": "Group UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "groupUuid",
+          "description": "Specify the Group UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Group UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
       "operation": "block_executables",
       "title": "Block Executables",
       "description": "Block executables by provided UUID",
       "category": "investigation",
       "annotation": "block_executables",
       "parameters": [
+        {
+          "title": "Application Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Application Management.",
+          "tooltip": "Specify the server URL for Application Management.",
+          "value": "https://eu.application-management.eset.systems"
+        },
         {
           "title": "Executable UUID",
           "required": false,
@@ -132,6 +403,17 @@
       "category": "investigation",
       "annotation": "unblock_executables",
       "parameters": [
+        {
+          "title": "Application Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Application Management.",
+          "tooltip": "Specify the server URL for Application Management.",
+          "value": "https://eu.application-management.eset.systems"
+        },
         {
           "title": "Executable UUID",
           "required": false,
