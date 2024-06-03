@@ -112,6 +112,27 @@
       "annotation": "get_device_tasks",
       "parameters": [
         {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Automation.",
+          "tooltip": "Specify the server URL for Automation.",
+          "value": "https://eu.automation.eset.systems"
+        },
+        {
+          "title": "Task UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_uuid",
+          "description": "Specify the Task UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Task UUID to get the details from ESET Server."
+        },
+        {
           "title": "Page Size",
           "required": false,
           "editable": true,

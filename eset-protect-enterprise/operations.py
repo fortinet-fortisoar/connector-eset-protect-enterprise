@@ -167,12 +167,16 @@ def get_detection_groups(config, params):
 def get_device_tasks(config, params):
     try:
         base_url = params.get("server_url")
-        endpoints_url = f"{base_url}/v1/device_tasks"
+        task_uuid = params.get("task_uuid")
         query_params = {}
-        if params.get("pageSize"):
-            query_params.update({"pageSize": params.get("pageSize")})
-        if params.get("pageToken"):
-            query_params.update({"pageToken": params.get("pageToken")})
+        if task_uuid:
+            endpoints_url = f"{base_url}/v1/device_tasks/{task_uuid}"
+        else:
+            endpoints_url = f"{base_url}/v1/device_tasks"
+            if params.get("pageSize"):
+                query_params.update({"pageSize": params.get("pageSize")})
+            if params.get("pageToken"):
+                query_params.update({"pageToken": params.get("pageToken")})
         return make_api_call(config, endpoints_url, params=query_params)
     except Exception as err:
         logger.exception('Failed to get device group. {}'.format(str(err)))
@@ -252,8 +256,8 @@ def create_device_tasks(config, params):
         task_payload = params.get("task_payload")
         return make_api_call(config, endpoints_url, json_data=task_payload, method="POST")
     except Exception as err:
-        logger.exception('Failed to get device group. {}'.format(str(err)))
-        raise ConnectorError('Failed to get device group. {}'.format(str(err)))
+        logger.exception('Failed to get device tasks. {}'.format(str(err)))
+        raise ConnectorError('Failed to get device tasks. {}'.format(str(err)))
 
 
 operations_map = {
