@@ -1,5 +1,6 @@
 from connectors.core.connector import ConnectorError, get_logger
 import requests
+from datetime import datetime, timedelta
 
 logger = get_logger('eset-protect-enterprise')
 
@@ -163,6 +164,98 @@ def get_detection_groups(config, params):
         raise ConnectorError('Failed to get device group. {}'.format(str(err)))
 
 
+def get_device_tasks(config, params):
+    try:
+        base_url = params.get("server_url")
+        endpoints_url = f"{base_url}/v1/device_tasks"
+        query_params = {}
+        if params.get("pageSize"):
+            query_params.update({"pageSize": params.get("pageSize")})
+        if params.get("pageToken"):
+            query_params.update({"pageToken": params.get("pageToken")})
+        return make_api_call(config, endpoints_url, params=query_params)
+    except Exception as err:
+        logger.exception('Failed to get device group. {}'.format(str(err)))
+        raise ConnectorError('Failed to get device group. {}'.format(str(err)))
+
+
+def isolate_computer_from_network(config, params):
+    try:
+        base_url = params.get("server_url")
+        endpoints_url = f"{base_url}/v1/device_tasks"
+        task_expire_time = params.get("task_expire_time")
+        current_time = datetime.now()
+        new_time = current_time + timedelta(minutes=task_expire_time)
+        formatted_time = new_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+        isolation_device = {
+            "task": {
+            "description": params.get("device_uuid", "IsolateDeviceASAP"),
+            "displayName": params.get("device_uuid", "IsolateDevice"),
+            "targets": {
+                 "devicesUuids": [params.get("device_uuid")],
+                 "deviceGroupsUuids": [params.get("device_group_uuid")]
+            },
+            "triggers": [{
+                 "manual": {
+                         "expireTime": formatted_time
+                }
+            }],
+            "action": {
+                 "name": "StartNetworkIsolation"
+                }
+            }
+        }
+        params.get("device_uuid")
+        return make_api_call(config, endpoints_url, json_data=isolation_device, method="POST")
+    except Exception as err:
+        logger.exception('Failed to get device group. {}'.format(str(err)))
+        raise ConnectorError('Failed to get device group. {}'.format(str(err)))
+
+
+def end_computer_isolation_from_network(config, params):
+    try:
+        base_url = params.get("server_url")
+        endpoints_url = f"{base_url}/v1/device_tasks"
+        task_expire_time = params.get("task_expire_time")
+        current_time = datetime.now()
+        new_time = current_time + timedelta(minutes=task_expire_time)
+        formatted_time = new_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+        isolation_device = {
+            "task": {
+            "description": params.get("device_uuid", "IsolateDeviceASAP"),
+            "displayName": params.get("device_uuid", "IsolateDevice"),
+            "targets": {
+                 "devicesUuids": [params.get("device_uuid")],
+                 "deviceGroupsUuids": [params.get("device_group_uuid")]
+            },
+            "triggers": [{
+                 "manual": {
+                         "expireTime": formatted_time
+                }
+            }],
+            "action": {
+                 "name": "EndNetworkIsolation"
+                }
+            }
+        }
+        params.get("device_uuid")
+        return make_api_call(config, endpoints_url, json_data=isolation_device, method="POST")
+    except Exception as err:
+        logger.exception('Failed to get device group. {}'.format(str(err)))
+        raise ConnectorError('Failed to get device group. {}'.format(str(err)))
+
+
+def create_device_tasks(config, params):
+    try:
+        base_url = params.get("server_url")
+        endpoints_url = f"{base_url}/v1/device_tasks"
+        task_payload = params.get("task_payload")
+        return make_api_call(config, endpoints_url, json_data=task_payload, method="POST")
+    except Exception as err:
+        logger.exception('Failed to get device group. {}'.format(str(err)))
+        raise ConnectorError('Failed to get device group. {}'.format(str(err)))
+
+
 operations_map = {
     'get_executables': get_executables,
     'block_executables': block_executables,
@@ -170,5 +263,9 @@ operations_map = {
     'get_device': get_device,
     'get_device_group': get_device_group,
     'get_detections': get_detections,
-    'get_detection_groups': get_detection_groups
+    'get_detection_groups': get_detection_groups,
+    'get_device_tasks': get_device_tasks,
+    'isolate_computer_from_network': isolate_computer_from_network,
+    'create_device_tasks': create_device_tasks,
+    'end_computer_isolation_from_network': end_computer_isolation_from_network
 }

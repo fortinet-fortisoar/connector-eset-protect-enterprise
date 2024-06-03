@@ -105,6 +105,37 @@
       "output_schema": {}
     },
     {
+      "operation": "get_device_tasks",
+      "title": "Get Device Tasks",
+      "description": "Get list of all device tasks.",
+      "category": "investigation",
+      "annotation": "get_device_tasks",
+      "parameters": [
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
       "operation": "get_detections",
       "title": "Get Detections",
       "description": "List all the detections.",
@@ -354,10 +385,187 @@
       "output_schema": {}
     },
     {
+      "operation": "create_device_tasks",
+      "title": "Create Device Task",
+      "description": "Create device task.",
+      "category": "containment",
+      "annotation": "create_device_tasks",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Automation.",
+          "tooltip": "Specify the server URL for Automation.",
+          "value": "https://eu.automation.eset.systems"
+        },
+        {
+          "title": "Task Payload",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "task_payload",
+          "description": "Specify the payload for new task.",
+          "tooltip": "Specify the payload for new task."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "isolate_computer_from_network",
+      "title": "Isolate Computer From Network",
+      "description": "Isolate computer from network.",
+      "category": "containment",
+      "annotation": "isolate_computer_from_network",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Automation.",
+          "tooltip": "Specify the server URL for Automation.",
+          "value": "https://eu.automation.eset.systems"
+        },
+        {
+          "title": "Device UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "device_uuid",
+          "description": "Specify the device UUID to isolate from network.",
+          "tooltip": "Specify the device UUID to isolate from network."
+        },
+        {
+          "title": "Device Group UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "device_group_uuid",
+          "description": "Specify the device group UUID to isolate from network.",
+          "tooltip": "Specify the device group UUID to isolate from network."
+        },
+        {
+          "title": "Task Expire Time in minutes",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_expire_time",
+          "description": "Specify the minutes so that this task will get expired after that.",
+          "tooltip": "Specify the minutes so that this task will get expired after that."
+        },
+        {
+          "title": "Task Display Name",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_display_name",
+          "description": "Specify the the name for new created task.",
+          "tooltip": "Specify the the name for new created task."
+        },
+        {
+          "title": "Task Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_description",
+          "description": "Specify the the description for new created task.",
+          "tooltip": "Specify the the description for new created task."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "end_computer_isolation_from_network",
+      "title": "End Computer Isolation From Network",
+      "description": "End computer isolation from network.",
+      "category": "containment",
+      "annotation": "end_computer_isolation_from_network",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Automation.",
+          "tooltip": "Specify the server URL for Automation.",
+          "value": "https://eu.automation.eset.systems"
+        },
+        {
+          "title": "Device UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "device_uuid",
+          "description": "Specify the device UUID to end isolation from network.",
+          "tooltip": "Specify the device UUID to end isolation from network."
+        },
+        {
+          "title": "Device Group UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "device_group_uuid",
+          "description": "Specify the device group UUID to end isolation from network.",
+          "tooltip": "Specify the device group UUID to end isolation from network."
+        },
+        {
+          "title": "Task Expire Time in minutes",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_expire_time",
+          "description": "Specify the minutes so that this task will get expired after that.",
+          "tooltip": "Specify the minutes so that this task will get expired after that.",
+          "value": 10
+        },
+        {
+          "title": "Task Display Name",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_display_name",
+          "description": "Specify the the name for new created task.",
+          "tooltip": "Specify the the name for new created task."
+        },
+        {
+          "title": "Task Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_description",
+          "description": "Specify the the description for new created task.",
+          "tooltip": "Specify the the description for new created task."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
       "operation": "block_executables",
       "title": "Block Executables",
       "description": "Block executables by provided UUID",
-      "category": "investigation",
+      "category": "containment",
       "annotation": "block_executables",
       "parameters": [
         {
@@ -400,7 +608,7 @@
       "operation": "unblock_executables",
       "title": "Unblock Executables",
       "description": "Unblock executables by provided UUID",
-      "category": "investigation",
+      "category": "remediation",
       "annotation": "unblock_executables",
       "parameters": [
         {
