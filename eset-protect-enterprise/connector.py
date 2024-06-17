@@ -1,3 +1,9 @@
+""" Copyright start
+  MIT License
+  Copyright (c) 2024 Fortinet Inc
+  Copyright end """
+
+
 from connectors.core.connector import Connector, ConnectorError, get_logger
 from .operations import operations_map
 logger = get_logger('eset-protect-enterprise')

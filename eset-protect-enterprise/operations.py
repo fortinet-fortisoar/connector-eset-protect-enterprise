@@ -1,3 +1,9 @@
+""" Copyright start
+  MIT License
+  Copyright (c) 2024 Fortinet Inc
+  Copyright end """
+
+
 from connectors.core.connector import ConnectorError, get_logger
 import requests
 from datetime import datetime, timedelta
