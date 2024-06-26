@@ -26,6 +26,15 @@ def make_api_call(config, connector_info,  url, method="GET", params=None, data=
             return response
         logger.error(response)
         raise ConnectorError(str(response))
+    except requests.exceptions.SSLError:
+        raise ConnectorError('SSL certificate validation failed')
+    except requests.exceptions.ConnectTimeout:
+        raise ConnectorError('The request timed out while trying to connect to the server')
+    except requests.exceptions.ReadTimeout:
+        raise ConnectorError(
+            'The server did not send any data in the allotted amount of time')
+    except requests.exceptions.ConnectionError:
+        raise ConnectorError('Invalid endpoint or credentials')
     except Exception as e:
         if 'Max retries exceeded' in str(e):
             raise ConnectorError(

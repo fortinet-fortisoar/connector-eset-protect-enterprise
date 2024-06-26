@@ -3,7 +3,7 @@
   "label": "ESET Protect Enterprise",
   "version": "1.0.0",
   "description": "ESET Protect Enterprise extended detection and response (XDR) that delivers enterprise-grade visibility, threat hunting and response options.",
-  "publisher": "FortiSOAR",
+  "publisher": "Fortinet",
   "cs_approved": false,
   "cs_compatible": true,
   "category": "Endpoint Security",
@@ -55,7 +55,7 @@
     {
       "operation": "get_executables",
       "title": "Get Executables",
-      "description": "List all the executables.",
+      "description": "Retrieves a list of all the executables from ESET.",
       "category": "investigation",
       "annotation": "get_executables",
       "parameters": [
@@ -107,7 +107,7 @@
     {
       "operation": "get_device_tasks",
       "title": "Get Device Tasks",
-      "description": "Get list of all device tasks.",
+      "description": "Retrieves a list of all device tasks.",
       "category": "investigation",
       "annotation": "get_device_tasks",
       "parameters": [
@@ -159,7 +159,7 @@
     {
       "operation": "get_detections",
       "title": "Get Detections",
-      "description": "List all the detections.",
+      "description": "Retrieves a list of all the detections.",
       "category": "investigation",
       "annotation": "get_detections",
       "parameters": [
@@ -241,7 +241,7 @@
     {
       "operation": "get_detection_groups",
       "title": "Get Detection Groups",
-      "description": "List all the detections groups.",
+      "description": "Retrieves a list of all the detections groups.",
       "category": "investigation",
       "annotation": "get_detection_groups",
       "parameters": [
@@ -323,7 +323,7 @@
     {
       "operation": "get_device",
       "title": "Get Device",
-      "description": "Get device details.",
+      "description": "Retrieves all details of the device.",
       "category": "investigation",
       "annotation": "get_device",
       "parameters": [
@@ -355,7 +355,7 @@
     {
       "operation": "get_device_groups",
       "title": "Get Device Groups",
-      "description": "Get list of all device group details.",
+      "description": "Retrieves all details of device group.",
       "category": "investigation",
       "annotation": "get_device_groups",
       "parameters": [
@@ -408,7 +408,7 @@
     {
       "operation": "create_device_tasks",
       "title": "Create Device Task",
-      "description": "Create device task.",
+      "description": "Create device task. Created task requires to have at least one trigger set. Otherwise the call fails.",
       "category": "containment",
       "annotation": "create_device_tasks",
       "parameters": [
