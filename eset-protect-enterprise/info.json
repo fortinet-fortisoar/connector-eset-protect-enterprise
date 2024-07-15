@@ -1,0 +1,672 @@
+{
+  "name": "eset-protect-enterprise",
+  "label": "ESET Protect Enterprise",
+  "version": "1.0.0",
+  "description": "ESET Protect Enterprise extended detection and response (XDR) that delivers enterprise-grade visibility, threat hunting and response options.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Endpoint Security",
+  "icon_small_name": "eset_small.png",
+  "icon_large_name": "eset_large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "base_url",
+        "description": "URL for the ESET Enterprise server from where the connector gets notifications."
+      },
+      {
+        "title": "Username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_username",
+        "description": "Username to access the ESET Enterprise server."
+      },
+      {
+        "title": "Password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "server_password",
+        "description": "Password to access the ESET Enterprise server."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_executables",
+      "title": "Get Executables",
+      "description": "Retrieves a list of all the executables from ESET.",
+      "category": "investigation",
+      "annotation": "get_executables",
+      "parameters": [
+        {
+          "title": "Application Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Application Management.",
+          "tooltip": "Specify the server URL for Application Management.",
+          "value": "https://eu.application-management.eset.systems"
+        },
+        {
+          "title": "Executable UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "executableUuid",
+          "description": "Specify the Executable UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Executable UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "get_device_tasks",
+      "title": "Get Device Tasks",
+      "description": "Retrieves a list of all device tasks.",
+      "category": "investigation",
+      "annotation": "get_device_tasks",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Automation.",
+          "tooltip": "Specify the server URL for Automation.",
+          "value": "https://eu.automation.eset.systems"
+        },
+        {
+          "title": "Task UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_uuid",
+          "description": "Specify the Task UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Task UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "get_detections",
+      "title": "Get Detections",
+      "description": "Retrieves a list of all the detections.",
+      "category": "investigation",
+      "annotation": "get_detections",
+      "parameters": [
+        {
+          "title": "Incident Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Incident Management.",
+          "tooltip": "Specify the server URL for Incident Management.",
+          "value": "https://eu.incident-management.eset.systems"
+        },
+        {
+          "title": "Detection UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "detectionUuid",
+          "description": "Specify the Detection UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Detection UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Device UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "deviceUuid",
+          "description": "Specify the Device UUID to get detections those are linked with the provided device.",
+          "tooltip": "Specify the Device UUID to get detections those are linked with the provided device."
+        },
+        {
+          "title": "Start Time",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "start_time",
+          "description": "Specify the start time for include only incidents whose detections occurred after start time.",
+          "tooltip": "Specify the start time for include only incidents whose detections occurred after start time."
+        },
+        {
+          "title": "End Time",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "end_time",
+          "description": "Specify the end time for include only incidents whose detections occurred before end time.",
+          "tooltip": "Specify the end time for include only incidents whose detections occurred before end time."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "get_detection_groups",
+      "title": "Get Detection Groups",
+      "description": "Retrieves a list of all the detections groups.",
+      "category": "investigation",
+      "annotation": "get_detection_groups",
+      "parameters": [
+        {
+          "title": "Incident Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Incident Management.",
+          "tooltip": "Specify the server URL for Incident Management.",
+          "value": "https://eu.incident-management.eset.systems"
+        },
+        {
+          "title": "Detection Group UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "detectionGroupUuid",
+          "description": "Specify the Detection Group UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Detection Group UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Device UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "deviceUuid",
+          "description": "Specify the Device UUID to get detection groups those are linked with the provided device.",
+          "tooltip": "Specify the Device UUID to get detection groups those are linked with the provided device."
+        },
+        {
+          "title": "Start Time",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "start_time",
+          "description": "Specify the start time for include only incidents whose detections occurred after start time.",
+          "tooltip": "Specify the start time for include only incidents whose detections occurred after start time."
+        },
+        {
+          "title": "End Time",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "end_time",
+          "description": "Specify the end time for include only incidents whose detections occurred before end time.",
+          "tooltip": "Specify the end time for include only incidents whose detections occurred before end time."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "get_device",
+      "title": "Get Device",
+      "description": "Retrieves all details of the device.",
+      "category": "investigation",
+      "annotation": "get_device",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Device Management.",
+          "tooltip": "Specify the server URL for Device Management.",
+          "value": "https://eu.device-management.eset.systems"
+        },
+        {
+          "title": "Device UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "deviceUuid",
+          "description": "Specify the Device UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Device UUID to get the details from ESET Server."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "get_device_groups",
+      "title": "Get Device Groups",
+      "description": "Retrieves all details of device group.",
+      "category": "investigation",
+      "annotation": "get_device_groups",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Device Management.",
+          "tooltip": "Specify the server URL for Device Management.",
+          "value": "https://eu.device-management.eset.systems"
+        },
+        {
+          "title": "Group UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "groupUuid",
+          "description": "Specify the Group UUID to get the details from ESET Server.",
+          "tooltip": "Specify the Group UUID to get the details from ESET Server."
+        },
+        {
+          "title": "Page Size",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageSize",
+          "description": "Specify the page size for pagination purpose. Maximum value can be 2147483647",
+          "tooltip": "Specify the page size for pagination purpose. Maximum value can be 2147483647"
+        },
+        {
+          "title": "Page Token",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "description": "Specify the page token of current page. If not given the first page is returned.",
+          "tooltip": "Specify the page token of current page. If not given the first page is returned."
+        }
+
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "create_device_tasks",
+      "title": "Create Device Task",
+      "description": "Create device task. Created task requires to have at least one trigger set. Otherwise the call fails.",
+      "category": "containment",
+      "annotation": "create_device_tasks",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Automation.",
+          "tooltip": "Specify the server URL for Automation.",
+          "value": "https://eu.automation.eset.systems"
+        },
+        {
+          "title": "Task Payload",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "task_payload",
+          "description": "Specify the payload for new task.",
+          "tooltip": "Specify the payload for new task."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "isolate_computer_from_network",
+      "title": "Isolate Computer From Network",
+      "description": "Isolate computer from network.",
+      "category": "containment",
+      "annotation": "isolate_computer_from_network",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Automation.",
+          "tooltip": "Specify the server URL for Automation.",
+          "value": "https://eu.automation.eset.systems"
+        },
+        {
+          "title": "Device UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "device_uuid",
+          "description": "Specify the device UUID to isolate from network.",
+          "tooltip": "Specify the device UUID to isolate from network."
+        },
+        {
+          "title": "Device Group UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "device_group_uuid",
+          "description": "Specify the device group UUID to isolate from network.",
+          "tooltip": "Specify the device group UUID to isolate from network."
+        },
+        {
+          "title": "Task Expire Time in minutes",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_expire_time",
+          "description": "Specify the minutes so that this task will get expired after that.",
+          "tooltip": "Specify the minutes so that this task will get expired after that."
+        },
+        {
+          "title": "Task Display Name",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_display_name",
+          "description": "Specify the the name for new created task.",
+          "tooltip": "Specify the the name for new created task."
+        },
+        {
+          "title": "Task Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_description",
+          "description": "Specify the the description for new created task.",
+          "tooltip": "Specify the the description for new created task."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "end_computer_isolation_from_network",
+      "title": "End Computer Isolation From Network",
+      "description": "End computer isolation from network.",
+      "category": "containment",
+      "annotation": "end_computer_isolation_from_network",
+      "parameters": [
+        {
+          "title": "Server URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Automation.",
+          "tooltip": "Specify the server URL for Automation.",
+          "value": "https://eu.automation.eset.systems"
+        },
+        {
+          "title": "Device UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "device_uuid",
+          "description": "Specify the device UUID to end isolation from network.",
+          "tooltip": "Specify the device UUID to end isolation from network."
+        },
+        {
+          "title": "Device Group UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "device_group_uuid",
+          "description": "Specify the device group UUID to end isolation from network.",
+          "tooltip": "Specify the device group UUID to end isolation from network."
+        },
+        {
+          "title": "Task Expire Time in minutes",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_expire_time",
+          "description": "Specify the minutes so that this task will get expired after that.",
+          "tooltip": "Specify the minutes so that this task will get expired after that.",
+          "value": 10
+        },
+        {
+          "title": "Task Display Name",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_display_name",
+          "description": "Specify the the name for new created task.",
+          "tooltip": "Specify the the name for new created task."
+        },
+        {
+          "title": "Task Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "task_description",
+          "description": "Specify the the description for new created task.",
+          "tooltip": "Specify the the description for new created task."
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "block_executables",
+      "title": "Block Executables",
+      "description": "Block executables by provided UUID",
+      "category": "containment",
+      "annotation": "block_executables",
+      "parameters": [
+        {
+          "title": "Application Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Application Management.",
+          "tooltip": "Specify the server URL for Application Management.",
+          "value": "https://eu.application-management.eset.systems"
+        },
+        {
+          "title": "Executable UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "executableUuid",
+          "description": "Specify the Executable UUID to the blocked.",
+          "tooltip": "Specify the Executable UUID to the blocked."
+        },
+        {
+          "title": "Request Body",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "json_data",
+          "description": "Request body.",
+          "tooltip": "Request body.",
+          "value": {}
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    },
+    {
+      "operation": "unblock_executables",
+      "title": "Unblock Executables",
+      "description": "Unblock executables by provided UUID",
+      "category": "remediation",
+      "annotation": "unblock_executables",
+      "parameters": [
+        {
+          "title": "Application Management URL",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server_url",
+          "description": "Specify the server URL for Application Management.",
+          "tooltip": "Specify the server URL for Application Management.",
+          "value": "https://eu.application-management.eset.systems"
+        },
+        {
+          "title": "Executable UUID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "executableUuid",
+          "description": "Specify the Executable UUID to the unblocked.",
+          "tooltip": "Specify the Executable UUID to the unblocked."
+        },
+        {
+          "title": "Request Body",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "json_data",
+          "description": "Request body.",
+          "tooltip": "Request body.",
+          "value": {}
+        }
+      ],
+      "enabled": true,
+      "output_schema": {}
+    }
+  ]
+}
