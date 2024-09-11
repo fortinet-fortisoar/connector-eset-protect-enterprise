@@ -2,23 +2,23 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "58bb7076-d120-406b-bf73-4eed3037b20e",
+      "uuid": "d68221fd-25df-46f4-b9ac-596f0e8b6f87",
       "@type": "WorkflowCollection",
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "e600cc83-c8cc-4a84-b59e-4b5517473372",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "2b18009d-29a8-464d-9867-9c5bd5757dfb",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "2965667a-8505-4c2c-bf01-e5a4a16d159a",
+              "uuid": "c5522fe8-c3b5-4557-b277-843df2629e69",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "8a86a11a-36c7-48b7-9f39-1713e52ae5fa",
-                "title": "ESET Protect Enterprise: Get Executables",
+                "route": "25d8ecc3-eb7e-44c3-a990-9594cf1aace7",
+                "title": "ESET Protect Enterprise: Get Executables List",
                 "resources": [
                   "alerts"
                 ],
@@ -37,9 +37,9 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "7fcccf81-831d-4537-a431-c3ac3d9e0bf6",
+              "uuid": "48ca2ede-9f25-4fc5-9487-ce9107497485",
               "@type": "WorkflowStep",
-              "name": "Get Executables",
+              "name": "Get Executables List",
               "description": null,
               "status": null,
               "arguments": {
@@ -54,7 +54,7 @@
                 "version": "1.0.0",
                 "connector": "eset-protect-enterprise",
                 "operation": "get_executables",
-                "operationTitle": "Get Executables",
+                "operationTitle": "Get Executables List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -65,8 +65,8 @@
             }
           ],
           "triggerLimit": null,
-          "description": "List all the executables.",
-          "name": "Get Executables",
+          "description": "Retrieves a list of all the executables from ESET.",
+          "name": "Get Executables List",
           "tag": "#ESET Protect Enterprise",
           "recordTags": [
             "Eset",
@@ -77,33 +77,33 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/2965667a-8505-4c2c-bf01-e5a4a16d159a",
+          "triggerStep": "/api/3/workflow_steps/c5522fe8-c3b5-4557-b277-843df2629e69",
           "routes": [
             {
-              "uuid": "5ace01d6-f0c0-41e4-aa60-c78bad846406",
+              "uuid": "34bf8125-116c-4d8a-b867-a0261a0a43ec",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Executables",
-              "sourceStep": "/api/3/workflow_steps/2965667a-8505-4c2c-bf01-e5a4a16d159a",
-              "targetStep": "/api/3/workflow_steps/7fcccf81-831d-4537-a431-c3ac3d9e0bf6"
+              "name": "Start-> Get Executables List",
+              "sourceStep": "/api/3/workflow_steps/c5522fe8-c3b5-4557-b277-843df2629e69",
+              "targetStep": "/api/3/workflow_steps/48ca2ede-9f25-4fc5-9487-ce9107497485"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "3e487644-303d-4d93-9b42-c672955f7042",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "c617493c-7763-459b-b01e-a419fa933ac6",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "0ae8b8ed-bf9f-46da-8f6b-f1e742ebfd33",
+              "uuid": "d28e7737-a5e0-4a89-9b67-d42fcaa7dae5",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "4714d15e-d76d-413d-ac2c-22aa7d35233e",
-                "title": "ESET Protect Enterprise: Get Device Tasks",
+                "route": "e2b1e11f-e109-4fc0-a771-2cb619db71d5",
+                "title": "ESET Protect Enterprise: Get Device Tasks List",
                 "resources": [
                   "alerts"
                 ],
@@ -122,9 +122,9 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "c018559a-5fa9-4d7a-ad40-487e22f8cc29",
+              "uuid": "d57bfd43-8ccd-41d4-addc-fecaf900cd25",
               "@type": "WorkflowStep",
-              "name": "Get Device Tasks",
+              "name": "Get Device Tasks List",
               "description": null,
               "status": null,
               "arguments": {
@@ -139,7 +139,7 @@
                 "version": "1.0.0",
                 "connector": "eset-protect-enterprise",
                 "operation": "get_device_tasks",
-                "operationTitle": "Get Device Tasks",
+                "operationTitle": "Get Device Tasks List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -150,8 +150,8 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Get list of all device tasks.",
-          "name": "Get Device Tasks",
+          "description": "Retrieves a list of all device tasks.",
+          "name": "Get Device Tasks List",
           "tag": "#ESET Protect Enterprise",
           "recordTags": [
             "Eset",
@@ -162,33 +162,33 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/0ae8b8ed-bf9f-46da-8f6b-f1e742ebfd33",
+          "triggerStep": "/api/3/workflow_steps/d28e7737-a5e0-4a89-9b67-d42fcaa7dae5",
           "routes": [
             {
-              "uuid": "2b8272ec-1688-4790-ac70-b14b18d9acc5",
+              "uuid": "f9d336d7-8de5-4549-9f97-a77d13170a9e",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Device Tasks",
-              "sourceStep": "/api/3/workflow_steps/0ae8b8ed-bf9f-46da-8f6b-f1e742ebfd33",
-              "targetStep": "/api/3/workflow_steps/c018559a-5fa9-4d7a-ad40-487e22f8cc29"
+              "name": "Start-> Get Device Tasks List",
+              "sourceStep": "/api/3/workflow_steps/d28e7737-a5e0-4a89-9b67-d42fcaa7dae5",
+              "targetStep": "/api/3/workflow_steps/d57bfd43-8ccd-41d4-addc-fecaf900cd25"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "c20e99bd-1e77-4815-8698-351e0b0f1824",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "c00dcd2a-3077-4568-ae3e-4865234cc52b",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "c368ee54-0cca-4cbb-9306-2a42d1e7270d",
+              "uuid": "aaae2ab4-f51f-40d4-bac2-e9e1481882b9",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "84e79bcc-acc9-4404-88df-28a51d804645",
-                "title": "ESET Protect Enterprise: Get Detections",
+                "route": "2cb50a66-af95-4c3c-9ad5-7416b2ee5362",
+                "title": "ESET Protect Enterprise: Get Detections List",
                 "resources": [
                   "alerts"
                 ],
@@ -207,9 +207,9 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "e6101016-499c-407c-9019-f33eee64e087",
+              "uuid": "744b862e-6125-4d46-bb5e-7d1f7273a2d5",
               "@type": "WorkflowStep",
-              "name": "Get Detections",
+              "name": "Get Detections List",
               "description": null,
               "status": null,
               "arguments": {
@@ -227,7 +227,7 @@
                 "version": "1.0.0",
                 "connector": "eset-protect-enterprise",
                 "operation": "get_detections",
-                "operationTitle": "Get Detections",
+                "operationTitle": "Get Detections List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -238,8 +238,8 @@
             }
           ],
           "triggerLimit": null,
-          "description": "List all the detections.",
-          "name": "Get Detections",
+          "description": "Retrieves a list of all the detections.",
+          "name": "Get Detections List",
           "tag": "#ESET Protect Enterprise",
           "recordTags": [
             "Eset",
@@ -250,33 +250,33 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c368ee54-0cca-4cbb-9306-2a42d1e7270d",
+          "triggerStep": "/api/3/workflow_steps/aaae2ab4-f51f-40d4-bac2-e9e1481882b9",
           "routes": [
             {
-              "uuid": "b548561b-9829-4991-bf9f-603976923b65",
+              "uuid": "348c58ed-24e6-46ae-b632-fe0ddcee745e",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Detections",
-              "sourceStep": "/api/3/workflow_steps/c368ee54-0cca-4cbb-9306-2a42d1e7270d",
-              "targetStep": "/api/3/workflow_steps/e6101016-499c-407c-9019-f33eee64e087"
+              "name": "Start-> Get Detections List",
+              "sourceStep": "/api/3/workflow_steps/aaae2ab4-f51f-40d4-bac2-e9e1481882b9",
+              "targetStep": "/api/3/workflow_steps/744b862e-6125-4d46-bb5e-7d1f7273a2d5"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "02302bda-a600-4f3f-ade7-5d919d39c3ee",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "55d0bb11-c650-4ac0-a181-95a59c018d72",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "4b2cd745-38f0-4e87-be6a-d2000503c21a",
+              "uuid": "4d4cb33d-d256-404b-9b87-565d351f3158",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "570ecaf2-173b-44b4-ad0c-84910b6031d7",
-                "title": "ESET Protect Enterprise: Get Detection Groups",
+                "route": "aae1c337-05c4-4ac0-8f41-f87eafadb09b",
+                "title": "ESET Protect Enterprise: Get Detection Groups List",
                 "resources": [
                   "alerts"
                 ],
@@ -295,9 +295,9 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "63f928cb-c8e3-4dee-81bb-e5802343c068",
+              "uuid": "ff912067-c193-417a-a62c-2ca818956fd7",
               "@type": "WorkflowStep",
-              "name": "Get Detection Groups",
+              "name": "Get Detection Groups List",
               "description": null,
               "status": null,
               "arguments": {
@@ -315,7 +315,7 @@
                 "version": "1.0.0",
                 "connector": "eset-protect-enterprise",
                 "operation": "get_detection_groups",
-                "operationTitle": "Get Detection Groups",
+                "operationTitle": "Get Detection Groups List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -326,8 +326,8 @@
             }
           ],
           "triggerLimit": null,
-          "description": "List all the detections groups.",
-          "name": "Get Detection Groups",
+          "description": "Retrieves a list of all the detections groups.",
+          "name": "Get Detection Groups List",
           "tag": "#ESET Protect Enterprise",
           "recordTags": [
             "Eset",
@@ -338,33 +338,33 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/4b2cd745-38f0-4e87-be6a-d2000503c21a",
+          "triggerStep": "/api/3/workflow_steps/4d4cb33d-d256-404b-9b87-565d351f3158",
           "routes": [
             {
-              "uuid": "b650ed4f-70de-4dc1-9925-621101c293ff",
+              "uuid": "4727d20b-eefb-47c4-a7c0-bd4efba00228",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Detection Groups",
-              "sourceStep": "/api/3/workflow_steps/4b2cd745-38f0-4e87-be6a-d2000503c21a",
-              "targetStep": "/api/3/workflow_steps/63f928cb-c8e3-4dee-81bb-e5802343c068"
+              "name": "Start-> Get Detection Groups List",
+              "sourceStep": "/api/3/workflow_steps/4d4cb33d-d256-404b-9b87-565d351f3158",
+              "targetStep": "/api/3/workflow_steps/ff912067-c193-417a-a62c-2ca818956fd7"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "588d419b-de46-4e9b-8f85-646b8cff4e3c",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "b87480a9-d040-4113-a2fe-6281d3a2254e",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "835ca2f5-af97-4c8d-b18d-10a8680e85b5",
+              "uuid": "aaec6a6e-cf2e-4029-a549-58fbce25f291",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "b560d985-220f-4461-a914-12a5dd1945b9",
-                "title": "ESET Protect Enterprise: Get Device",
+                "route": "f6bd4faa-6496-48a7-8433-17cf8ddc6ea4",
+                "title": "ESET Protect Enterprise: Get Device by UUID",
                 "resources": [
                   "alerts"
                 ],
@@ -383,9 +383,9 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "75eb85f4-0f0c-4e31-8bfd-69310acf1e68",
+              "uuid": "340f0d36-0d23-4c65-a5c9-0d295468c2b3",
               "@type": "WorkflowStep",
-              "name": "Get Device",
+              "name": "Get Device by UUID",
               "description": null,
               "status": null,
               "arguments": {
@@ -398,7 +398,7 @@
                 "version": "1.0.0",
                 "connector": "eset-protect-enterprise",
                 "operation": "get_device",
-                "operationTitle": "Get Device",
+                "operationTitle": "Get Device by UUID",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -409,8 +409,8 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Get device details.",
-          "name": "Get Device",
+          "description": "Retrieves all details of the device.",
+          "name": "Get Device by UUID",
           "tag": "#ESET Protect Enterprise",
           "recordTags": [
             "Eset",
@@ -421,33 +421,33 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/835ca2f5-af97-4c8d-b18d-10a8680e85b5",
+          "triggerStep": "/api/3/workflow_steps/aaec6a6e-cf2e-4029-a549-58fbce25f291",
           "routes": [
             {
-              "uuid": "af614796-f266-45a4-8d1a-b0c231cb61a4",
+              "uuid": "87351223-0ddc-4bd2-ad3c-9129084fca07",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Device",
-              "sourceStep": "/api/3/workflow_steps/835ca2f5-af97-4c8d-b18d-10a8680e85b5",
-              "targetStep": "/api/3/workflow_steps/75eb85f4-0f0c-4e31-8bfd-69310acf1e68"
+              "name": "Start-> Get Device by UUID",
+              "sourceStep": "/api/3/workflow_steps/aaec6a6e-cf2e-4029-a549-58fbce25f291",
+              "targetStep": "/api/3/workflow_steps/340f0d36-0d23-4c65-a5c9-0d295468c2b3"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "57edd305-b7d7-476b-bf3b-3c4eeb40ed27",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "8e4d36be-3f2e-45e5-8e49-b44d8356b981",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "1e1faea3-fb38-45f4-840f-b60befbaf815",
+              "uuid": "b739ba9c-ea67-4cc6-a7c5-f602a7ced96d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "66c22b40-2e32-4fa0-b600-906e5756a100",
-                "title": "ESET Protect Enterprise: Get Device Groups",
+                "route": "9bec0f32-989a-4978-9217-d570d865e8ac",
+                "title": "ESET Protect Enterprise: Get Device Groups List",
                 "resources": [
                   "alerts"
                 ],
@@ -466,9 +466,9 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "0aa0b386-25c1-49be-87d6-6182124fe96e",
+              "uuid": "39cabecd-268f-40a8-ad94-4573d8333220",
               "@type": "WorkflowStep",
-              "name": "Get Device Groups",
+              "name": "Get Device Groups List",
               "description": null,
               "status": null,
               "arguments": {
@@ -483,7 +483,7 @@
                 "version": "1.0.0",
                 "connector": "eset-protect-enterprise",
                 "operation": "get_device_groups",
-                "operationTitle": "Get Device Groups",
+                "operationTitle": "Get Device Groups List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -494,8 +494,8 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Get list of all device group details.",
-          "name": "Get Device Groups",
+          "description": "Retrieves all details of device group.",
+          "name": "Get Device Groups List",
           "tag": "#ESET Protect Enterprise",
           "recordTags": [
             "Eset",
@@ -506,32 +506,32 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/1e1faea3-fb38-45f4-840f-b60befbaf815",
+          "triggerStep": "/api/3/workflow_steps/b739ba9c-ea67-4cc6-a7c5-f602a7ced96d",
           "routes": [
             {
-              "uuid": "7724ad96-eb20-465c-bb69-d6fafab371d2",
+              "uuid": "d08687dd-5018-4951-b6a4-8a425321aedd",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Device Groups",
-              "sourceStep": "/api/3/workflow_steps/1e1faea3-fb38-45f4-840f-b60befbaf815",
-              "targetStep": "/api/3/workflow_steps/0aa0b386-25c1-49be-87d6-6182124fe96e"
+              "name": "Start-> Get Device Groups List",
+              "sourceStep": "/api/3/workflow_steps/b739ba9c-ea67-4cc6-a7c5-f602a7ced96d",
+              "targetStep": "/api/3/workflow_steps/39cabecd-268f-40a8-ad94-4573d8333220"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "5a4e0f98-b902-424e-94cf-9457253c86c5",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "6de4518e-1658-4ee3-b13a-420f455277ce",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "eda6d9d1-2bb6-4eda-bfac-66b1f7549b0d",
+              "uuid": "b4137922-3e96-49f0-93a5-dacd8a6bb693",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "e5469750-0e13-4d4a-886a-5d1662df4016",
+                "route": "4106c708-b02b-4783-9fd0-a5512ade992c",
                 "title": "ESET Protect Enterprise: Create Device Task",
                 "resources": [
                   "alerts"
@@ -551,7 +551,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "c4f3b1a2-102e-4bd2-ace9-fa5d5ab88920",
+              "uuid": "6c6ecda6-503c-4628-b7d3-20ceea1ffb10",
               "@type": "WorkflowStep",
               "name": "Create Device Task",
               "description": null,
@@ -577,7 +577,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Create device task.",
+          "description": "Create device task. Created task requires to have at least one trigger set. Otherwise the call fails.",
           "name": "Create Device Task",
           "tag": "#ESET Protect Enterprise",
           "recordTags": [
@@ -589,32 +589,32 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/eda6d9d1-2bb6-4eda-bfac-66b1f7549b0d",
+          "triggerStep": "/api/3/workflow_steps/b4137922-3e96-49f0-93a5-dacd8a6bb693",
           "routes": [
             {
-              "uuid": "ccb58f20-cc98-4f8d-89ab-d25fe01481fd",
+              "uuid": "84e553e7-4167-49ab-aa39-70726342febd",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Device Task",
-              "sourceStep": "/api/3/workflow_steps/eda6d9d1-2bb6-4eda-bfac-66b1f7549b0d",
-              "targetStep": "/api/3/workflow_steps/c4f3b1a2-102e-4bd2-ace9-fa5d5ab88920"
+              "sourceStep": "/api/3/workflow_steps/b4137922-3e96-49f0-93a5-dacd8a6bb693",
+              "targetStep": "/api/3/workflow_steps/6c6ecda6-503c-4628-b7d3-20ceea1ffb10"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "52a06f5e-eb43-4a2d-b3db-ad9899abf397",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "f12c204c-1cb8-4d29-b908-efd25bbba776",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "0db14997-6b67-403c-9736-6091094e4779",
+              "uuid": "72c5a6ca-d2de-4c2e-b7be-fdbb12948727",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "723efd5b-9c7e-4e57-96f6-9f26b9cadda7",
+                "route": "f2c66ed1-ff5c-4d0b-bf31-b0579a44ae03",
                 "title": "ESET Protect Enterprise: Isolate Computer From Network",
                 "resources": [
                   "alerts"
@@ -634,7 +634,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "24193c4f-b950-4ac2-bce6-4a886331380a",
+              "uuid": "193ad67a-a861-48fb-a837-2f72c4a0a7b0",
               "@type": "WorkflowStep",
               "name": "Isolate Computer From Network",
               "description": null,
@@ -676,32 +676,32 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/0db14997-6b67-403c-9736-6091094e4779",
+          "triggerStep": "/api/3/workflow_steps/72c5a6ca-d2de-4c2e-b7be-fdbb12948727",
           "routes": [
             {
-              "uuid": "499d3770-92f6-4c53-9fc7-d7c4aca9a007",
+              "uuid": "fcd875b3-ac0b-4c35-b449-caf351c8b7ff",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Isolate Computer From Network",
-              "sourceStep": "/api/3/workflow_steps/0db14997-6b67-403c-9736-6091094e4779",
-              "targetStep": "/api/3/workflow_steps/24193c4f-b950-4ac2-bce6-4a886331380a"
+              "sourceStep": "/api/3/workflow_steps/72c5a6ca-d2de-4c2e-b7be-fdbb12948727",
+              "targetStep": "/api/3/workflow_steps/193ad67a-a861-48fb-a837-2f72c4a0a7b0"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "2bff00bc-f036-453c-9897-c1d7025cff48",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "9afe5201-0010-4f70-be3e-5b29004bee3a",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "a3674ceb-2848-4983-a090-f508a29cc8fa",
+              "uuid": "57bf67f7-4664-4dc5-acb0-23b112066abc",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "b8dfc831-c7a1-4059-ba97-a8354b25817c",
+                "route": "5b122bff-8a3e-4d37-b7df-72e82ee9e3ed",
                 "title": "ESET Protect Enterprise: End Computer Isolation From Network",
                 "resources": [
                   "alerts"
@@ -721,7 +721,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "20e3a5e4-fce2-4f56-a1cc-3342113a9195",
+              "uuid": "4ba5f9a1-dee3-438b-90c5-154e11342f46",
               "@type": "WorkflowStep",
               "name": "End Computer Isolation From Network",
               "description": null,
@@ -763,32 +763,32 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/a3674ceb-2848-4983-a090-f508a29cc8fa",
+          "triggerStep": "/api/3/workflow_steps/57bf67f7-4664-4dc5-acb0-23b112066abc",
           "routes": [
             {
-              "uuid": "f54dbc5c-ad50-4e2d-9302-59c77eadb217",
+              "uuid": "bde7cce6-e50c-4e8d-94a5-2746aef853b4",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> End Computer Isolation From Network",
-              "sourceStep": "/api/3/workflow_steps/a3674ceb-2848-4983-a090-f508a29cc8fa",
-              "targetStep": "/api/3/workflow_steps/20e3a5e4-fce2-4f56-a1cc-3342113a9195"
+              "sourceStep": "/api/3/workflow_steps/57bf67f7-4664-4dc5-acb0-23b112066abc",
+              "targetStep": "/api/3/workflow_steps/4ba5f9a1-dee3-438b-90c5-154e11342f46"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "2672cd33-2b8a-4faf-b801-779ca15d78cb",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "70fcd3a8-eb25-427e-8bb0-15f613392f08",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "15253449-7e0a-4a7a-97cf-58ffe977b92b",
+              "uuid": "640fcb18-08d3-4455-938c-0410b7db83d0",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d10d65b2-4e37-4fc0-9d19-dd5054fa1852",
+                "route": "d166efab-cf84-4908-85ef-d4e4f30d23eb",
                 "title": "ESET Protect Enterprise: Block Executables",
                 "resources": [
                   "alerts"
@@ -808,7 +808,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "e8bb44fd-433c-47fb-ae67-cd367337fa22",
+              "uuid": "eefa3053-a1cd-4d1f-92b1-3c217ed3efe5",
               "@type": "WorkflowStep",
               "name": "Block Executables",
               "description": null,
@@ -847,32 +847,32 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/15253449-7e0a-4a7a-97cf-58ffe977b92b",
+          "triggerStep": "/api/3/workflow_steps/640fcb18-08d3-4455-938c-0410b7db83d0",
           "routes": [
             {
-              "uuid": "30fc5a58-7cc0-4dd3-b483-e1008e28a66c",
+              "uuid": "e52c1685-fc78-4ba4-aed9-13512e700c4a",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Block Executables",
-              "sourceStep": "/api/3/workflow_steps/15253449-7e0a-4a7a-97cf-58ffe977b92b",
-              "targetStep": "/api/3/workflow_steps/e8bb44fd-433c-47fb-ae67-cd367337fa22"
+              "sourceStep": "/api/3/workflow_steps/640fcb18-08d3-4455-938c-0410b7db83d0",
+              "targetStep": "/api/3/workflow_steps/eefa3053-a1cd-4d1f-92b1-3c217ed3efe5"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "a8d9a6f6-5aa3-492d-a570-6b6bc8b0eb03",
-          "collection": "/api/3/workflow_collections/58bb7076-d120-406b-bf73-4eed3037b20e",
+          "uuid": "bf34de42-4ce7-4f0d-aae8-113755fc636c",
+          "collection": "/api/3/workflow_collections/d68221fd-25df-46f4-b9ac-596f0e8b6f87",
           "steps": [
             {
-              "uuid": "c5f6b0c0-2d0b-4d79-a7b3-1268a4507640",
+              "uuid": "15c67559-b66c-419c-9856-68a7b48e8e60",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "6a4389a6-7a72-47a1-946d-7f62e0a97357",
+                "route": "378e5d5d-70d9-4170-800e-a1e4ca604aa2",
                 "title": "ESET Protect Enterprise: Unblock Executables",
                 "resources": [
                   "alerts"
@@ -892,7 +892,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "a6eabad2-43e1-4988-afbc-ea1f66307ce6",
+              "uuid": "5ed1d501-1120-4cc8-9ad7-1abae6a8b7d1",
               "@type": "WorkflowStep",
               "name": "Unblock Executables",
               "description": null,
@@ -931,16 +931,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c5f6b0c0-2d0b-4d79-a7b3-1268a4507640",
+          "triggerStep": "/api/3/workflow_steps/15c67559-b66c-419c-9856-68a7b48e8e60",
           "routes": [
             {
-              "uuid": "cf9acf5c-8130-409f-ab1a-ec4ca014daff",
+              "uuid": "08378205-677a-44a9-8994-5d314b9391e8",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Unblock Executables",
-              "sourceStep": "/api/3/workflow_steps/c5f6b0c0-2d0b-4d79-a7b3-1268a4507640",
-              "targetStep": "/api/3/workflow_steps/a6eabad2-43e1-4988-afbc-ea1f66307ce6"
+              "sourceStep": "/api/3/workflow_steps/15c67559-b66c-419c-9856-68a7b48e8e60",
+              "targetStep": "/api/3/workflow_steps/5ed1d501-1120-4cc8-9ad7-1abae6a8b7d1"
             }
           ]
         }
