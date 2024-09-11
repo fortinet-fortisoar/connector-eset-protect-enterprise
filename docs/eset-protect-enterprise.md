@@ -180,12 +180,12 @@ The `Sample - eset-protect-enterprise - 1.0.0` playbook collection comes bundled
 - Block Executables
 - Create Device Task
 - End Computer Isolation From Network
-- Get Detection Groups
-- Get Detections
-- Get Device
-- Get Device Groups
-- Get Device Tasks
-- Get Executables
+- Get Detection Groups List
+- Get Detections List
+- Get Device by UUID
+- Get Device Groups List
+- Get Device Tasks List
+- Get Executables List
 - Isolate Computer From Network
 - Unblock Executables
 
